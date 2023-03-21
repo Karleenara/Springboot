@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 쿼리들간에 아이디 식별에 사용 현재는 거의 사용 X -->
+<mapper namespace="Score">
+	<select id="Score_getList" parameterType="ScoreDto"
+		resultType="scoreDto">
+		select *
+		from tb_score
+	</select>
+
+	<select id="Score_getTotalCnt" parameterType="ScoreDto"
+		resultType="Integer">
+		select count(*)
+		from tb_score
+	</select>
+</mapper>

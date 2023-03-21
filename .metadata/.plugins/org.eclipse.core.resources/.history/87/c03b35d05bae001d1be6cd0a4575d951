@@ -1,0 +1,34 @@
+package com.kosa.myapp.guestbook.controller;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kosa.myapp.guestbook.GuestbookDto;
+import com.kosa.myapp.guestbook.service.GuestbookService;
+
+import jakarta.annotation.Resource;
+
+@RestController
+public class GuestbookController {
+	@Resource(name="guestbookService")
+	GuestbookService service;
+	
+	@GetMapping("/guestbook/list")
+	public List<GuestbookDto> getList(GuestbookDto dto){
+		return service.getList(dto);
+	}
+	
+	@PostMapping("/guestbook/insert")
+	public HashMap<String, Object> insert(@RequestBody GuestbookDto dto){
+		
+		HashMap<String, Object>resultMap = new HashMap<String,Object>();
+		service.insert(dto);
+		resultMap.put("result","success");
+		return resultMap;
+	}
+}

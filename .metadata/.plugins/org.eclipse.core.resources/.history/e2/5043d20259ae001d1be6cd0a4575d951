@@ -1,0 +1,10 @@
+package com.kosa.myapp.guestbook.service;
+
+import java.util.List;
+
+import com.kosa.myapp.guestbook.GuestbookDto;
+
+public interface GuestbookService {
+	List<GuestbookDto> getList(GuestbookDto dto);
+	void insert(GuestbookDto dto);
+}

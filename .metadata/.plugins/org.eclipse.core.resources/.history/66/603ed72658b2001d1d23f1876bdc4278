@@ -1,0 +1,11 @@
+package com.kosa.myapp.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.kosa.myapp.domain.SampleDto;
+
+public interface SampleRepository extends JpaRepository<SampleDto, Long> {
+	List<SampleDto> findByTestOrderBySeqDesc(String test);
+}

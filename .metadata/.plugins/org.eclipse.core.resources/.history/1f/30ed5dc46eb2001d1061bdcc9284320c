@@ -1,0 +1,65 @@
+{{>layout/header}}
+{{>layout/nav}}
+
+
+
+
+<div class="container mt-3">
+  <h3>Navbar With Dropdown</h3>
+  <p>This example adds a dropdown menu in the navbar.</p>
+  
+
+   <table class="table">
+   	<colgroup>
+   		<col width="30%">
+   		<col width="*">
+   	</colgroup>
+    <tbody>
+      <tr>
+        <th>제목</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="text" class="form-control" placeholder="제목을 입력하세요"
+			    name="title" id="title">
+			 </div>
+        </td>
+      </tr>
+      <tr>
+        <th>작성자</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="text" class="form-control" placeholder="이름을 입력하세요"
+			    name="writer" id="writer">
+			 </div>
+        </td>
+      <tr>
+        <th></td>
+        <td>
+        	 <div class="input-group">
+			    <input type="text" class="form-control" placeholder="이름을 입력하세요"
+			    name="writer" id="writer">
+			 </div>
+        </td>
+      </tr>
+      <tr>
+        <th>내용</td>
+        <td>
+        	 <div class="input-group">
+			    <textarea class="form-control" placeholder="내용 입력하세요"
+			    name="contents" id="contents" rows="5"></textarea>
+			 </div>
+        </td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+ </div>
+
+
+ <div class="container" style="text-align:right">
+	<button type="button" id="btnWrite" class="btn btn-primary">글쓰기</button>
+ </div>
+
+  
+{{>layout/footer}}

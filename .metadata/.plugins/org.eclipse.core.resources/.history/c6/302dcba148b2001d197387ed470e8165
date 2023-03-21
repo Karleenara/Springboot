@@ -1,0 +1,27 @@
+
+server.port=9090
+
+spring.mustache.suffix=.html
+server.servlet.encoding.force=true
+
+# 세션값을 mustache 엔진에서 표출되도록 설정
+spring.mustache.servlet.expose-session-attributes=true
+
+# oracle 접속
+spring.datasource.url=jdbc:oracle:thin:@127.0.0.1:1521:XE
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.username=nara
+spring.datasource.password=skfk
+
+# JPA
+spring.jpa.database=oracle
+spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.open-in-view=false
+spring.jpa.show-sql=true
+spring.jpa.hibernate.format-sql=true
+spring.jpa.hibernate.use_sql_comment=true
+spring.jpa.hibernate.show_sql=true
+spring.level.org.hibernate.type.descriptor.sql=true
+

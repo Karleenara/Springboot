@@ -1,0 +1,8 @@
+package templates.index;
+
+public class Snippet {
+	$("#myform").prop("action","/member/save");
+		$("#myform").prop("method","post");
+		$("#myform").submit();
+}
+

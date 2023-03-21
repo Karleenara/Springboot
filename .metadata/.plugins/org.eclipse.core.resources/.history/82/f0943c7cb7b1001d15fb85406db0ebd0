@@ -1,0 +1,38 @@
+package address;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+public class AddressManager {
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("addresstest");
+	EntityManager em = factory.createEntityManager();
+	
+	public void close() {
+		em.close();
+		factory.close();
+	}
+	
+	public void showMenu() {
+		System.out.println("1. 등록");
+		System.out.println("2. 검색");
+		System.out.println("3. 수정 (번호)");
+		System.out.println("4. 삭제 (번호)");
+		System.out.println("5. 전체출력");
+		System.out.println("0. 종료");
+		System.out.println();
+		System.out.print("선택: ");
+		menu = k.nextInt;
+	}
+	
+	public void printAll() {
+		TypedQuery<AddressDto> query = em.createQuery("select t from AddressDto t", AddressDto.class);
+		List<AddressDto> list = query.getResultList();
+		list.stream().forEach(e->{
+			System.out.println(e);
+		});
+	}
+}

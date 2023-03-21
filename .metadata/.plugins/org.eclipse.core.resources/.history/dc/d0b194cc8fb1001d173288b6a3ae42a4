@@ -1,0 +1,28 @@
+package jpeaduexam.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import jpaeduexam.dto.EmpDto;
+
+public class EmpDao {
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("emptest");
+	EntityManager em = factory.createEntityManager();
+	
+	public void close() {
+		em.close();
+		factory.close();
+	}
+	
+	public void printAll() {
+		TypedQuery<EmpDto> query = em.createQuery("select t from emp t", EmpDto.class);
+		List<EmpDto> list = query.getResultList();
+		for(int i=0; i<list.size(); i++) {
+			System.out.println(list.get(i).getEname());
+		}
+	}
+}

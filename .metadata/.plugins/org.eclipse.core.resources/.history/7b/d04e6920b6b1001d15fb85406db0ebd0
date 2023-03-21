@@ -1,0 +1,5 @@
+package address.manager;
+
+public class AddressManager {
+
+}

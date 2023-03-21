@@ -1,0 +1,5 @@
+package jpaeduexam.dto;
+
+public class EmpDto {
+
+}

@@ -1,0 +1,21 @@
+package com.kosa.myapp.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kosa.myapp.domain.SampleDto;
+import com.kosa.myapp.service.SampleService;
+
+@RestController
+public class SampleController {
+	@Autowired
+	SampleService service;
+	
+	@GetMapping("/sample/list")
+	List<SampleDto> getList(SampleDto dto){
+		return service.getList(dto);
+	}
+}

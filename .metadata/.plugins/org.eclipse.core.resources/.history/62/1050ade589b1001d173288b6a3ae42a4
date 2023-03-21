@@ -1,0 +1,49 @@
+package jpaeduexam.test;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import jpaeduexam.dto.ScoreDto;
+
+public class SocreTest {
+	public static void main(String[] args) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("emptest");
+		EntityManager em = factory.createEntityManager();
+		System.out.println("jpa 실습");
+		
+		ScoreDto dto = new ScoreDto();
+		dto.setName("꺽정");
+		dto.setKor(80);
+		dto.setEng(10);
+		dto.setMat(20);
+		dto.setWdate(LocalDateTime.now());
+		
+//		em.getTransaction().begin();
+//		em.persist(dto);
+//		em.getTransaction().commit();
+		
+		// 데이터 가져오기
+		// TypeQuery 테이블이 아니라 클래스에서 데이터 가져옴
+		TypedQuery<ScoreDto> q = em.createQuery("select t from ScoreDto t", ScoreDto.class);
+		List<ScoreDto> list = q.getResultList();
+		
+		// javascript 화살표함수(람다) 자바는 list -> stream 객체로 전환 후 
+		// forEach - 매개변수 하나이고 반환값이 없는 람다함수 전달해야 함
+		list.stream().forEach(e->{
+			System.out.println(String.format("%s %d %d %d", e.getName(), e.getKor(), e.getEng(), e.getMat()));
+		});
+		
+		// 검색
+		q = em.createQuery("select t from ScoreDto t where t.seq=:seq", ScoreDto.class);
+		q.setParameter("seq", 1);
+		
+		em.close();
+		factory.close();
+		
+	}
+}

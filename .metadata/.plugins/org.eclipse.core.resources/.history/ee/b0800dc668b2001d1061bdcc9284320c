@@ -1,0 +1,12 @@
+package com.kosa.myapp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kosa.myapp.repository.MemberRepository;
+
+@Service
+public class MemberService {
+	@Autowired
+	MemberRepository dao;
+}

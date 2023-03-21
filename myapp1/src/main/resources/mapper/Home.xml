@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 쿼리들간에 아이디 식별에 사용 현재는 거의 사용 X -->
+<mapper namespace="Home">
+	<select id="Home_getList" parameterType="HomeDto" resultType="HomeDto">
+		select *
+		from
+		(
+		select *
+		from tb_home
+		order by seq desc
+		)
+		where <![CDATA[rownum <=5]]>
+	</select>
+	
+	<insert id = "Home_insert" parameterType="HomeDto">
+		<selectKey resultType="String" keyProperty = "seq" order="BEFORE">
+			select nvl(max(seq),0)+1 as seq
+			from tb_home		
+		</selectKey>
+		insert into tb_home
+		(seq, title, image)
+		values(#{seq}, #{title}, #{image})
+	</insert>
+
+</mapper>
+

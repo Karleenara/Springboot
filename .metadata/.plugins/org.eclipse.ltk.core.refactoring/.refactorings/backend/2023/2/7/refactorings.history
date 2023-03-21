@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;nav.html&apos; to &apos;nav.html&apos;&#x0D;&#x0A;- Original project: &apos;backend&apos;&#x0D;&#x0A;- Destination element: &apos;nav.html&apos;&#x0D;&#x0A;- Original element: &apos;nav.html&apos;" description="Copy file" element1="src/main/resources/templates/layout/nav.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1676524407197" target="/backend/src/main/resources/templates/layout/nav.html" units="0" version="1.0"/>
+</session>

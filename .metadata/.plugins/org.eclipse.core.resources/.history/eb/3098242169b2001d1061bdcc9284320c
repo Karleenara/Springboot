@@ -1,0 +1,19 @@
+package com.kosa.myapp.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kosa.myapp.domain.MemberDto;
+import com.kosa.myapp.repository.MemberRepository;
+
+@Service
+public class MemberService {
+	@Autowired
+	MemberRepository dao;
+	
+	List<MemberDto> getList(MemberDto dto, Pagable pageable){
+		return dao.findAll();
+	}
+}

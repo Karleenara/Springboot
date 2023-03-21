@@ -1,0 +1,9 @@
+package com.kosa.myapp.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.kosa.myapp.domain.MemberDto;
+
+public interface MemberRepository extends JpaRepository<MemberDto, Long>{
+
+}

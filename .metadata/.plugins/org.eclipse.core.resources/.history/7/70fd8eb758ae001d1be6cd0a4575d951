@@ -1,0 +1,13 @@
+package com.kosa.myapp.guestbook.repository;
+
+import java.util.List;
+
+import com.kosa.myapp.guestbook.GuestbookDto;
+
+public interface GuestbookDao {
+	List<GuestbookDto> getList(GuestbookDto dto);
+	void insert(GuestbookDto dto);
+	
+	void update(GuestbookDto dto);
+	void delete(GuestbookDto dto);
+}

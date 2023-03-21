@@ -1,0 +1,5 @@
+package address.dto;
+
+public class AddressDto {
+
+}

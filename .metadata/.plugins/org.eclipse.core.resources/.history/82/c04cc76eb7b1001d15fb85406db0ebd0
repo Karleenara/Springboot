@@ -1,0 +1,26 @@
+package address;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+public class AddressManager {
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("addresstest");
+	EntityManager em = factory.createEntityManager();
+	
+	public void close() {
+		em.close();
+		factory.close();
+	}
+	
+	public void printAll() {
+		TypedQuery<AddressDto> query = em.createQuery("select t from AddressDto t", AddressDto.class);
+		List<AddressDto> list = query.getResultList();
+		list.stream().forEach(e->{
+			System.out.println(e);
+		});
+	}
+}

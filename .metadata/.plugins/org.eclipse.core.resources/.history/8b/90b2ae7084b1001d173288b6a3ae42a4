@@ -1,0 +1,16 @@
+package jpaeduexam.dto;
+
+import java.time.LocalDateTime;
+
+// 오라클 시퀀스
+@SequenceGenerator(name="SCORE_SEQ_GENERATOR",
+						sequenceName="SEQ_SCORE")
+
+public class ScoreDto {
+	private int seq;
+	private String name;
+	private int kor;
+	private int eng;
+	private int mat;
+	private LocalDateTime wdate;
+}

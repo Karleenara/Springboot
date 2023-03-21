@@ -1,0 +1,5 @@
+package jpaedu.exam.dto;
+
+public class ScoreDto {
+
+}

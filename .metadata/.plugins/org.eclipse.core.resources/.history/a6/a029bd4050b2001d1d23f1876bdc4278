@@ -1,0 +1,23 @@
+package service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.kosa.myapp.domain.SampleDto;
+
+import repository.SampleRepository;
+
+public class SampleService {
+	@Autowired
+	private SampleRepository dao;
+	
+	public List<SampleDto> getList(SampleDto dto){
+		List<SampleDto> list = dao.findAll();
+		return list;
+	}
+	
+	public void insert(SampleDto dto) {
+		dao.save(dto);
+	}
+}

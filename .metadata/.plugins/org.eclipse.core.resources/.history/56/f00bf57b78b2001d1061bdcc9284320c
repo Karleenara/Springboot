@@ -1,0 +1,11 @@
+package com.kosa.myapp.repository;
+
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.kosa.myapp.domain.MemberDto;
+
+public interface MemberRepository extends JpaRepository<MemberDto, Long>{
+	@Query("select s from MemberDto s from s.user_id=:user_id")
+	MemberDto searchByUser_id(@param("user_id")String user_id);
+}

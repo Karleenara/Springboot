@@ -1,0 +1,11 @@
+package jpaeduexam.test;
+
+import jpeaduexam.dao.EmpDao;
+
+public class EmpTest {
+	public static void main(String[] args) {
+		EmpDao dao = new EmpDao();
+		dao.printAll();
+		dao.close();
+	}
+}

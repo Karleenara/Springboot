@@ -1,0 +1,22 @@
+package jpaeduexam.dto;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+// 테이블명과 클래스 이름이 다를 때 꼭 이 어노테이션 써야함
+@Table(name="emp")
+public class EmpDto {
+	@Id
+	private int empno;
+	private String ename;
+	private String job;
+	private Integer mgr;
+	private java.sql.Date hiredate; 
+	private int sal;
+	private Integer comm;
+	private Integer deptno;
+}

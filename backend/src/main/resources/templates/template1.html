@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>{{msg}}</h1>
+<h1>{{name}}</h1>
+
+<ul>
+	{{#sList}}
+	<li>{{.}}</li>
+	{{/sList}}
+</ul>
+
+<ul>
+	{{#boardList}}
+	<li>{{id}} {{title}} {{writer}} {{contents}}</li>
+	{{/boardList}}
+</ul>
+
+<h1>
+{{#userid}}
+{{username}}님, 안뇽!
+{{/userid}}
+{{^userid}}
+로그인 해랑
+{{/userid}}
+</h1>
+
+</body>
+</html>
